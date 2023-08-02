@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  src: url(/public/fonts/DMSans_18pt-Regular.ttf) format("ttf");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url(/public/fonts/Roboto-Regular.ttf) format("ttf");
+  font-display: swap;
+  font-weight: 400;
+}
+
+html {
+  font-family: "DM Sans", sans-serif;
+}
