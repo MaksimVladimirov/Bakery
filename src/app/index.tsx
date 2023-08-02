@@ -1,7 +1,13 @@
+import { withProviders } from './providers';
 import './styles/index.scss';
+import { Routing } from '../pages/index';
 
 function App() {
-  return <>Home</>;
+  return (
+    <>
+      <Routing />
+    </>
+  );
 }
 
-export default App;
+export default withProviders(App);
