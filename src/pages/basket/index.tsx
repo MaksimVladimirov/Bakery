@@ -1,5 +1,5 @@
 const BasketPage = () => {
-  return <div>Test Pagesdsdfsdffsdf</div>;
+  return <div>Basket page</div>;
 };
 
 export default BasketPage;
