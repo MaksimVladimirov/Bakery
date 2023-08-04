@@ -1,5 +1,11 @@
 .header {
-	display: flex;
-	padding: 16px 24px;
-	height: 87px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 16px 24px;
+  height: 87px;
+
+  .links {
+    display: flex;
+  }
 }
