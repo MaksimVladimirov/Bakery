@@ -1,8 +1,9 @@
-import { Form } from '../../entitites/Form';
+import { Form } from '../../features/AuthForm/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from 'src/features/userSlice';
 import { useAppDispatch } from 'src/features/userSlice/hooks/redux-hooks';
+import styles from './styles.module.scss';
 
 export const Login = () => {
   const dispatch = useAppDispatch();
@@ -27,11 +28,11 @@ export const Login = () => {
   };
 
   return (
-    <>
+    <section className={styles.login}>
       <Form title="Войти" handleClick={handleLogin}></Form>
       или
       <Link to="/register"> зарегистрироваться</Link>
-    </>
+    </section>
   );
 };
 

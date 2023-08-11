@@ -10,12 +10,11 @@ export const Form: FC<FormProps> = ({ title, handleClick }) => {
   const [password, setPassword] = useState('');
 
   return (
-    <>
-      <h1>{title}</h1>
-
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="пароль" />
+    <div>
+      <h2>{title}</h2>
       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="пароль" />
       <button onClick={() => handleClick(email, password)}> {title}</button>
-    </>
+    </div>
   );
 };

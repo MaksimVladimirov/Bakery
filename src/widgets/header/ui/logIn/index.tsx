@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 export const LogIn = () => {
   return (
-    <button>
+    <div>
       <Link to="/login" className={styles.login}>
         <img src={PersonImg} alt="Person" width={40} height={40} />
         <p>Log in</p>
       </Link>
-    </button>
+    </div>
   );
 };
