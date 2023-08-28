@@ -7,9 +7,9 @@ export const LogOut = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <button onClick={() => dispatch(removeUser())} className={styles.login}>
+    <div onClick={() => dispatch(removeUser())} className={styles.login}>
       <img src={PersonImg} alt="Person" width={40} height={40} />
-      <p>Log Out</p>
-    </button>
+      <p>Выйти</p>
+    </div>
   );
 };

@@ -7,7 +7,7 @@ export const Basket = () => {
     <div>
       <Link to="/basket" className={styles.basket}>
         <img src={CartImg} alt="Basket" width={40} height={40} />
-        <p>Cart</p>
+        <p>Корзина</p>
       </Link>
     </div>
   );

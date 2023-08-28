@@ -1,24 +1,23 @@
 import { Link } from 'react-scroll';
-import styles from './styles.module.scss';
 
 export const NavMenu = () => {
   return (
     <>
-      <a href="" className={styles.links}>
+      <a href="">
         <Link to="targetSection" smooth={true} duration={500}>
-          SHOP
+          МАГАЗИН
         </Link>
       </a>
 
-      <a href="" className={styles.links}>
+      <a href="">
         <Link to="targetSection" smooth={true} duration={500}>
-          OUR STORY
+          НАША ИСТОРИЯ
         </Link>
       </a>
 
-      <a href="" className={styles.links}>
+      <a href="">
         <Link to="targetSection" smooth={true} duration={500}>
-          WHO IS TARLA?
+          КТО МЫ?
         </Link>
       </a>
     </>

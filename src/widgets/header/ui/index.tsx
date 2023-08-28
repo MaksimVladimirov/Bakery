@@ -1,5 +1,5 @@
-import { Logo } from './logo';
-import { NavMenu } from './nav';
+import { Logo } from '../../../shared/logo';
+import { NavMenu } from 'src/shared/nav';
 import { LogIn } from './logIn';
 import { Basket } from './basket';
 import { LogOut } from './logOut';
@@ -8,16 +8,15 @@ import { useAuth } from 'src/features/userSlice/hooks/useAuth';
 
 export const Header = () => {
   const { isAuth } = useAuth();
-  console.log(isAuth)
 
   return (
     <header className={styles.header}>
-      <nav>
+      <nav className={styles.navmenu}>
         <Logo />
         <NavMenu />
       </nav>
       <div className={styles.links}>
-        {!isAuth ? <LogIn /> : <LogOut  />}
+        {!isAuth ? <LogIn /> : <LogOut />}
         <Basket />
       </div>
     </header>

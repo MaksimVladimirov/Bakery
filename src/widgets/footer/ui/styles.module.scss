@@ -1,0 +1,10 @@
+.footer {
+  min-height: 700px;
+  width: 100%;
+  background-color: var(--grey);
+
+  .container {
+    display: flex;
+    margin-top: 100px;
+  }
+}

@@ -7,7 +7,7 @@ export const LogIn = () => {
     <div>
       <Link to="/login" className={styles.login}>
         <img src={PersonImg} alt="Person" width={40} height={40} />
-        <p>Log in</p>
+        <p>Войти</p>
       </Link>
     </div>
   );
