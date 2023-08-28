@@ -4,7 +4,7 @@ import { Resources } from './resources';
 import { Social } from './social';
 import { Account } from './account';
 import { About } from './aboutCompany';
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 
 function Footer() {
   return (

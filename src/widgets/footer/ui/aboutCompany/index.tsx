@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavMenu } from 'src/shared/nav';
 
 export const About = () => {

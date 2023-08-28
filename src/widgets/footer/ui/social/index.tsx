@@ -4,8 +4,6 @@ import InstagramLogo from '/public/images/social/instagram.svg';
 import TikTokLogo from '/public/images/social/tik-tok.svg';
 import SpotifyLogo from '/public/images/social/spotify.svg';
 
-
-
 export const Social = () => {
   return (
     <div>
