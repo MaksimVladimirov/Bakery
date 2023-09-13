@@ -10,13 +10,14 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <JoinCommunity />
-      <div className={styles.container}>
+      <section className={styles.container}>
         <Logo />
         <Account />
         <About />
         <Resources />
         <Social />
-      </div>
+        {/* <p className={styles.copyright}>©2021 Tarla</p> */}
+      </section>
     </footer>
   );
 }
