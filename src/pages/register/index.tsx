@@ -3,7 +3,7 @@ import { useAppDispatch } from 'src/features/userSlice/hooks/redux-hooks';
 import { useNavigate } from 'react-router-dom';
 
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { Form } from 'src/features/AuthForm/Form';
+import { Form } from 'src/features/auth-form/Form';
 import { setUser } from 'src/features/userSlice';
 
 const RegisterPage = () => {

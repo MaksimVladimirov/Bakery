@@ -1,9 +1,9 @@
-import { JoinCommunity } from 'src/widgets/footer/ui/joinOurCommunity';
+import { JoinCommunity } from 'src/widgets/footer/ui/join-our-community';
 import { Logo } from 'src/shared/logo';
 import { Resources } from './resources';
 import { Social } from './social';
 import { Account } from './account';
-import { About } from './aboutCompany';
+import { About } from './about-company';
 import styles from './styles.module.scss';
 
 function Footer() {

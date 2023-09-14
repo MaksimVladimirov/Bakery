@@ -1,7 +1,7 @@
 import { useState, useRef, MouseEvent } from 'react';
-import Img1 from '/public/images/forSlider/img1.png';
-import Img2 from '/public/images/forSlider/img2.png';
-import Img3 from '/public/images/forSlider/img4.png';
+import Img1 from '/public/images/for-slider/img1.png';
+import Img2 from '/public/images/for-slider/img2.png';
+import Img3 from '/public/images/for-slider/img4.png';
 
 import styles from './styles.module.scss';
 
