@@ -1,0 +1,15 @@
+.button {
+  width: 200px;
+  height: 58px;
+  border: 1px solid #0126de;
+  border-radius: var(--radius);
+  color: #0126de;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+
+  &:hover {
+    background-color: rgb(235, 227, 227);
+  }
+}
