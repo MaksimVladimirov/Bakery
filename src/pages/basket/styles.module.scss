@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+}
+
+.description {
+  margin-left: 20px;
+}
+.count {
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  color: tomato;
+}
+
+.name {
+  font-size: 1.5rem;
+}
+
+.price {
+  font-size: 1.2rem;
+}
+
+.button {
+  margin-top: 40px;
+  display: flex;
+  width: 125px;
+  height: 42px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-blue);
+  font-size: 1.6rem;
+  padding: 5px;
+}
+
+.minus_button {
+  border: none;
+  border-radius: var(--radius);
+  width: 47px;
+  height: 40px;
+  background: none;
+}
+
+.remove_button {
+  border: none;
+  border-radius: var(--radius);
+  width: 47px;
+  height: 40px;
+  background: none;
+}
+
+.plus_button {
+  border: none;
+  background: none;
+  border-radius: var(--radius);
+  width: 40px;
+  height: 40px;
+}
+
+.remove_items__button {
+  width: 200px;
+  height: 50px;
+  border: 1px solid var(--color-blue);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--color-blue);
+  &:hover {
+    background-color: var(--hovered-btn);
+  }
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}

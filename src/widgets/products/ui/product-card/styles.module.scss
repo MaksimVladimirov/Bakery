@@ -30,3 +30,19 @@
     border-radius: var(--radius);
   }
 }
+
+.button {
+  width: 200px;
+  height: 58px;
+  border: 1px solid #0126de;
+  border-radius: var(--radius);
+  color: var(--color-blue);
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+
+  &:hover {
+    background-color: var(--hovered-btn);
+  }
+}

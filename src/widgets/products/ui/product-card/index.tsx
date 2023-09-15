@@ -1,12 +1,27 @@
-import { BakeryInfo } from 'src/types/bakeryInfo';
-import { AddToCardButton } from '../add-to-card-button';
+import { BakeryInfo } from 'src/types/bakery-info';
 import StarImg from '/public/images/star.svg';
 
 import styles from './styles.module.scss';
-import { useFetchBakeryQuery } from 'src/features/fetchBakery';
+import { useFetchBakeryQuery } from 'src/features/fetch-bakery';
+import { useDispatch } from 'react-redux';
+import { addItem } from 'src/features/cartSlice';
 
 function BakeryComponent() {
+  const dispatch = useDispatch();
   const { data: bakeryData, isLoading, isError } = useFetchBakeryQuery({});
+
+  const addProduct = (img: string, name: string, price: number, id: number, bestseller: boolean) => {
+    const product = {
+      img,
+      name,
+      price,
+      id,
+      bestseller,
+      count: 0,
+    };
+
+    dispatch(addItem(product));
+  };
 
   return (
     // TODO: skeleton
@@ -23,7 +38,14 @@ function BakeryComponent() {
               <p className={styles.price}>
                 Цена 5 штук: <i>{price}</i> ₽
               </p>
-              <AddToCardButton />
+              <button
+                className={styles.button}
+                onClick={() => {
+                  addProduct(img, name, price, id, bestseller);
+                }}
+              >
+                Добавить в корзину
+              </button>
             </div>
           ))}
         </>

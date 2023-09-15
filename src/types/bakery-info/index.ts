@@ -4,6 +4,5 @@ export interface BakeryInfo {
   id: number;
   bestseller: boolean;
   img: string;
+  count: number;
 }
-
-

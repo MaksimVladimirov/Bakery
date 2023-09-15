@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 const Products = () => {
   return (
     <section className={styles.products}>
-      <h2 className={styles.title}>Shop pastry kits</h2>
+      <h2 className={styles.title}>Кондитерские изделия</h2>
       <BakeryComponent />
     </section>
   );
