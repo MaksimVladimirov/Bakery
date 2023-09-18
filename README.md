@@ -1,27 +1,23 @@
-# React + TypeScript + Vite
+# 🍩 Tarla-  кондитерская 🍰
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✅[Кондитерская](bakery-mu.vercel.app/) (Посмотреть можно тут)✅
 
-Currently, two official plugins are available:
+## Что было реализованно:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Разрабатывал полноценное фронтенд-приложение на ReactJS.
+- Создал компоненты, страницы, регистрацию, поиск и т.д.
+- Взаимодействовал с серверной частью, отправлял запросы на бэкенд.
+- Разработал навигацию по странице без перезагрузки.
+- Создал глобальное хранилище данных для всего приложения.
+- Писать строго типизированный код на TypeScript.
 
-## Expanding the ESLint configuration
+# Использованные технологии:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **ReactJS**
+- **TypeScript**
+- **Redux** (глобальное хранилище данных / пицц)
+- **React Router v6** (навигация)
+- **Rtk query** (отправка запроса на бэкенд)
+- **React Hooks** (хуки)
+- **Prettier** (форматирование кода)
+- **CSS-Modules / SCSS** (стилизация)
