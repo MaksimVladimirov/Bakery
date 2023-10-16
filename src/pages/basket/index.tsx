@@ -1,7 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { selectProducts, selectTotalPrice } from 'src/features/cartSlice/selector';
-import { useAppSelector } from 'src/features/userSlice/hooks/redux-hooks';
-import { clearItems, minusItem, plusItem, removeItem } from 'src/features/cartSlice';
 import { EmptyBasket } from 'src/widgets/empty-basket';
 import { BackToStartPageButton } from 'src/shared/back-to-start-page-button';
 import Minus from '/public/images/basket/minus.svg';
@@ -9,54 +5,40 @@ import Plus from '/public/images/basket/plus.svg';
 import Trash from '/public/images/basket/remove.svg';
 
 import styles from './styles.module.scss';
+import cartStore from 'src/app/store/store';
+import { observer } from 'mobx-react';
 
-const BasketPage = () => {
-  const products = useAppSelector(selectProducts);
-  const dispatch = useDispatch();
-  const totalPrice = useSelector(selectTotalPrice);
-
+const BasketPage = observer(() => {
   const onClickClear = () => {
     if (window.confirm('Очистить корзину?')) {
-      dispatch(clearItems());
+      cartStore.clearItems();
     }
   };
-  console.log('Component rerendered');
-  const onClickMinus = (id: number) => {
-    dispatch(minusItem(id));
-  };
 
-  const onClickPlus = (id: number) => {
-    dispatch(plusItem(id));
-  };
-
-  const onClickRemove = (id: number) => {
-    dispatch(removeItem(id));
-  };
-
-  if (products.length) {
+  if (cartStore.items.length) {
     return (
       <section>
         <h3> Корзина</h3>
-        {products.map(({ id, name, count, price, img }) => (
-          <div className={styles.container} key={id}>
-            <img className={styles.image} src={img} />
+        {cartStore.items.map((item) => (
+          <div className={styles.container} key={item.id}>
+            <img className={styles.image} src={item.img} />
             <div className={styles.description}>
-              <p className={styles.name}>{name}</p>
-              <p className={styles.price}>Цена за 5 штук {price} руб.</p>
+              <p className={styles.name}>{item.name}</p>
+              <p className={styles.price}>Цена за 5 штук {item.price} руб.</p>
               <div className={styles.button}>
-                {count > 1 ? (
-                  <img src={Minus} className={styles.minus_button} onClick={() => onClickMinus(id)} />
+                {item.count > 1 ? (
+                  <img src={Minus} className={styles.minus_button} onClick={() => cartStore.minusItem(item)} />
                 ) : (
-                  <img src={Trash} className={styles.remove_button} onClick={() => onClickRemove(id)} />
+                  <img src={Trash} className={styles.remove_button} onClick={() => cartStore.removeItem(item)} />
                 )}
-                <div className={styles.count}> {count}</div>
+                <div className={styles.count}> {item.count}</div>
 
-                <img src={Plus} className={styles.plus_button} onClick={() => onClickPlus(id)} />
+                <img src={Plus} className={styles.plus_button} onClick={() => cartStore.plusItem(item)} />
               </div>
             </div>
           </div>
         ))}
-        <p> Общая сумма составляет {totalPrice}</p>
+        <p> Общая сумма составляет {cartStore.totalPrice}</p>
         <button className={styles.remove_items__button} onClick={onClickClear}>
           Удалить все товары с корзины
         </button>
@@ -66,6 +48,6 @@ const BasketPage = () => {
   } else {
     return <EmptyBasket />;
   }
-};
+});
 
 export default BasketPage;

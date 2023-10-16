@@ -1,57 +1,61 @@
+import { observer } from 'mobx-react';
 import { BakeryInfo } from 'src/types/bakery-info';
 import StarImg from '/public/images/star.svg';
-
 import styles from './styles.module.scss';
 import { useFetchBakeryQuery } from 'src/features/fetch-bakery';
-import { useDispatch } from 'react-redux';
-import { addItem } from 'src/features/cartSlice';
+import cartStore from 'src/app/store/store';
 
-function BakeryComponent() {
-  const dispatch = useDispatch();
+const BakeryComponent = observer(() => {
   const { data: bakeryData, isLoading, isError } = useFetchBakeryQuery({});
 
-  const addProduct = (img: string, name: string, price: number, id: number, bestseller: boolean) => {
+  const addProduct = ({ img, name, price, id, bestseller }: BakeryInfo) => {
     const product = {
       img,
       name,
       price,
       id,
       bestseller,
-      count: 0,
+      count: 1,
     };
 
-    dispatch(addItem(product));
+    cartStore.addItem(product);
   };
 
   return (
-    // TODO: skeleton
     <div className={styles.container}>
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error</p>}
       {bakeryData && (
         <>
-          {bakeryData.map(({ img, name, price, id, bestseller }: BakeryInfo) => (
-            <div key={id} className={styles.card_container}>
-              {bestseller && <img src={StarImg} className={styles.star} alt="Bestseller" />}
-              <img className={styles.image} src={img} alt={name} />
-              <p className={styles.title}>{name}</p>
+          {bakeryData.map((item: BakeryInfo) => (
+            <div key={item.id} className={styles.card_container}>
+              {item.bestseller && <img src={StarImg} className={styles.star} alt="Bestseller" />}
+              <img className={styles.image} src={item.img} alt={item.name} />
+              <p className={styles.title}>{item.name}</p>
               <p className={styles.price}>
-                Цена 5 штук: <i>{price}</i> ₽
+                Цена 5 штук: <i>{item.price}</i> ₽
               </p>
               <button
                 className={styles.button}
                 onClick={() => {
-                  addProduct(img, name, price, id, bestseller);
+                  addProduct(item);
                 }}
               >
-                Добавить в корзину
+                {cartStore.items.find((object) => object.id === item.id)?.count === undefined
+                  ? 'Добавить в корзину'
+                  : 'Уже в корзине'}
               </button>
+              <span>
+                {cartStore.items.find((object) => object.id === item.id)?.count === undefined
+                  ? ''
+                  : cartStore.items.find((object) => object.id === item.id)?.count}
+              </span>
             </div>
           ))}
         </>
       )}
     </div>
   );
-}
+});
 
 export default BakeryComponent;

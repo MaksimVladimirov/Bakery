@@ -6,7 +6,7 @@ import { LogOut } from './log-out';
 import styles from './styles.module.scss';
 import { useAuth } from 'src/features/userSlice/hooks/useAuth';
 
-export const Header = () => {
+const Header = () => {
   const { isAuth } = useAuth();
 
   return (
