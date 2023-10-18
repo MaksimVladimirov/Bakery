@@ -26,7 +26,7 @@ const BasketPage = observer(() => {
               <p className={styles.name}>{item.name}</p>
               <p className={styles.price}>Цена за 5 штук {item.price} руб.</p>
               <div className={styles.button}>
-                {item.count > 1 ? (
+                {item.count && item.count > 1 ? (
                   <img src={Minus} className={styles.minus_button} onClick={() => cartStore.minusItem(item)} />
                 ) : (
                   <img src={Trash} className={styles.remove_button} onClick={() => cartStore.removeItem(item)} />
