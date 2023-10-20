@@ -1,10 +1,10 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-const LoginPage = lazy(() => import('./login/index'));
-const BasketPage = lazy(() => import('./basket/index'));
-const HomePage = lazy(() => import('./home'));
-const RegisterPage = lazy(() => import('./register/index'));
+const LoginPage = lazy(() => import('./login/LoginPage'));
+const BasketPage = lazy(() => import('./basket/BasketPage'));
+const HomePage = lazy(() => import('./home/HomePage'));
+const RegisterPage = lazy(() => import('./register/RegisterPage'));
 
 export const Routing = () => {
   return (

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Form } from 'src/features/auth-form/Form';
-import { setUser } from 'src/features/userSlice';
+import { setUser } from 'src/features/userSlice/userSlice';
 
 const RegisterPage = () => {
   const dispatch = useAppDispatch();

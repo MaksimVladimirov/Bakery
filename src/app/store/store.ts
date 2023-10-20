@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import { BakeryInfo } from 'src/types/bakery-info';
+import { BakeryInfo } from 'src/types/bakery-info/bakeryInfo';
 import { calcTotalPrice } from '../utils/calcTotalPrice';
 
 class CartStore {
@@ -23,13 +23,13 @@ class CartStore {
   removeItem = (item: BakeryInfo) => {
     this.items = this.items.filter((object) => object.id !== item.id);
     this.totalPrice = calcTotalPrice(this.items);
-  }
+  };
 
   clearItems = () => {
     this.items = [];
     this.totalPrice = 0;
     this.totalPrice = calcTotalPrice(this.items);
-  }
+  };
 
   minusItem = (item: BakeryInfo) => {
     const findItem = this.items.find((obj) => obj.id === item.id);
@@ -37,7 +37,7 @@ class CartStore {
       findItem.count = (findItem.count || 0) - 1;
       this.totalPrice = calcTotalPrice(this.items);
     }
-  }
+  };
 
   plusItem = (item: BakeryInfo) => {
     const findItem = this.items.find((obj) => obj.id === item.id);
@@ -45,7 +45,7 @@ class CartStore {
       findItem.count = (findItem.count || 0) + 1;
       this.totalPrice = calcTotalPrice(this.items);
     }
-  }
+  };
 }
 
 const cartStore = new CartStore();

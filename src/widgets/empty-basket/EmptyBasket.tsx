@@ -1,4 +1,4 @@
-import { BackToStartPageButton } from 'src/shared/back-to-start-page-button';
+import { BackToStartPageButton } from 'src/shared/back-to-start-page-button/BackToStartPageButton';
 import styles from './styles.module.scss';
 
 export const EmptyBasket = () => {
@@ -6,7 +6,7 @@ export const EmptyBasket = () => {
     <section className={styles.empty_basket}>
       <div className={styles.container}>
         <h2>Корзина пуста 😔</h2>
-       <BackToStartPageButton/>
+        <BackToStartPageButton />
       </div>
     </section>
   );

@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
-import { BakeryInfo } from 'src/types/bakery-info';
+import { BakeryInfo } from 'src/types/bakery-info/bakeryInfo';
 import StarImg from '/public/images/star.svg';
 import styles from './styles.module.scss';
-import { useFetchBakeryQuery } from 'src/features/fetch-bakery';
+import { useFetchBakeryQuery } from 'src/features/fetch-bakery/fetchBakery';
 import cartStore from 'src/app/store/store';
 
 const BakeryComponent = observer(() => {

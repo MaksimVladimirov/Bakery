@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { calcTotalPrice } from 'src/app/utils/calcTotalPrice';
-import { BakeryInfo } from 'src/types/bakery-info';
+import { BakeryInfo } from 'src/types/bakery-info/bakeryInfo';
 
 export interface CartSliceState {
   items: BakeryInfo[];

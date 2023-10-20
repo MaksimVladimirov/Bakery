@@ -1,5 +1,5 @@
-import { NavMenu } from 'src/shared/nav';
-import styles from './styles.module.scss'
+import { NavMenu } from 'src/shared/nav/NavMenu';
+import styles from './styles.module.scss';
 
 export const About = () => {
   return (

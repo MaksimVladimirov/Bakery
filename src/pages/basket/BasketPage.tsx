@@ -1,5 +1,5 @@
-import { EmptyBasket } from 'src/widgets/empty-basket';
-import { BackToStartPageButton } from 'src/shared/back-to-start-page-button';
+import { EmptyBasket } from 'src/widgets/empty-basket/EmptyBasket';
+import { BackToStartPageButton } from 'src/shared/back-to-start-page-button/BackToStartPageButton';
 import Minus from '/public/images/basket/minus.svg';
 import Plus from '/public/images/basket/plus.svg';
 import Trash from '/public/images/basket/remove.svg';
