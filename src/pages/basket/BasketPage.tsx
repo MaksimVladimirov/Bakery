@@ -15,6 +15,8 @@ const BasketPage = observer(() => {
     }
   };
 
+  console.log(cartStore.items)
+
   if (cartStore.items.length) {
     return (
       <section>

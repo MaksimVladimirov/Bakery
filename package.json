@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -31,6 +33,9 @@
     "react-scroll": "^1.8.9"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/user-event": "^14.5.1",
+    "@testing-library/react": "^14.0.0",
     "@types/compose-function": "^0.0.30",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -40,8 +45,11 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "happy-dom": "^12.9.1",
+    "jsdom": "^22.1.0",
     "sass": "^1.64.2",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
   }
 }
