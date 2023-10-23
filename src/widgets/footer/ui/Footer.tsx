@@ -16,7 +16,7 @@ function Footer() {
         <About />
         <Resources />
         <Social />
-        {/* <p className={styles.copyright}>©2021 Tarla</p> */}
+        <p className={styles.copyright}>©2021 Tarla</p>
       </section>
     </footer>
   );
