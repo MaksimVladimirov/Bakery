@@ -6,7 +6,7 @@ import { Products } from 'src/widgets/products';
 const HomePage = () => (
   <>
     <Header />
-    <Products/>
+    <Products />
     <FoodSlider />
     <Footer />
   </>

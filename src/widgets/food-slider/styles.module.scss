@@ -1,21 +1,21 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
 }
 
 .slider {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-    max-width: 1786px;
-    & > img {
-        width: 336px;
-        height: 336px;
-        margin-right: 24px;
-    }
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  max-width: 1786px;
+  & > img {
+    width: 336px;
+    height: 336px;
+    margin-right: 24px;
+  }
 }
 
 .slider::-webkit-scrollbar {
@@ -29,4 +29,3 @@
   font-weight: 400;
   line-height: 3.75rem;
 }
-
