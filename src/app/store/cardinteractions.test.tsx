@@ -50,5 +50,6 @@ describe('Cartstore тест', () => {
   test('Тест на очистку всех элементов', () => {
     cartStore.clearItems();
     expect(cartStore.items).toEqual([]);
+    expect(cartStore.totalPrice).toEqual(0);
   });
 });
