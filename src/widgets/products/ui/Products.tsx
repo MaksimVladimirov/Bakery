@@ -1,4 +1,4 @@
-import BakeryComponent from './product-card/ProductCard';
+import BakeryComponent from './productCard/ProductCard';
 import styles from './styles.module.scss';
 
 const Products = () => {

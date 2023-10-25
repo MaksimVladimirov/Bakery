@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import CartImg from '/public/images/cart.svg';
 import styles from './styles.module.scss';
-import cartStore from 'src/app/store/store';
+import cartStore from 'src/features/cartStore/cartStore';
 import { observer } from 'mobx-react';
 
 export const Basket = observer(() => {

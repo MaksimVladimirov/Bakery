@@ -2,11 +2,14 @@ import { observer } from 'mobx-react';
 import { BakeryInfo } from 'src/types/bakery-info/bakeryInfo';
 import StarImg from '/public/images/star.svg';
 import styles from './styles.module.scss';
-import { useFetchBakeryQuery } from 'src/features/fetch-bakery/fetchBakery';
-import cartStore from 'src/app/store/store';
+import cartStore from 'src/features/cartStore/cartStore';
+import fetchBakery from 'src/features/fetchBakery/fetchBakery';
+import { useEffect } from 'react';
 
 const BakeryComponent = observer(() => {
-  const { data: bakeryData, isLoading, isError } = useFetchBakeryQuery({});
+  useEffect(() => {
+    fetchBakery.fetchBakery();
+  }, []);
 
   const addProduct = ({ img, name, price, id, bestseller }: BakeryInfo) => {
     const product = {
@@ -23,11 +26,11 @@ const BakeryComponent = observer(() => {
 
   return (
     <div className={styles.container}>
-      {isLoading && <p>Loading...</p>}
-      {isError && <p>Error</p>}
-      {bakeryData && (
+      {fetchBakery.isLoading && <p>Loading...</p>}
+      {fetchBakery.error && <p>Error</p>}
+      {fetchBakery.bakeryData && (
         <>
-          {bakeryData.map((item: BakeryInfo) => (
+          {fetchBakery.bakeryData.map((item: BakeryInfo) => (
             <div key={item.id} className={styles.card_container}>
               {item.bestseller && <img src={StarImg} className={styles.star} alt="Bestseller" />}
               <img className={styles.image} src={item.img} alt={item.name} />

@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { BakeryInfo } from 'src/types/bakery-info/bakeryInfo';
-import { calcTotalPrice } from '../utils/calcTotalPrice';
+import { calcTotalPrice } from '../../app/utils/calcTotalPrice';
 
 class CartStore {
   items: BakeryInfo[] = [];

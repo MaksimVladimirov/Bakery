@@ -1,8 +1,8 @@
 import { describe, test, expect } from 'vitest';
-import cartStore from './store';
-import { calcTotalPrice } from '../utils/calcTotalPrice';
+import cartStore from './cartStore';
+import { calcTotalPrice } from '../../app/utils/calcTotalPrice';
 
-describe('Cartstore тест', () => {
+describe('Тесты CartStore', () => {
   const itemToAdd = {
     id: 2,
     name: 'Булка с малиной',
@@ -12,7 +12,7 @@ describe('Cartstore тест', () => {
     img: 'https://www.gastronom.ru/binfiles/images/20171102/b65d30ca.jpg',
   };
 
-  test('Тест на добавление элемента', () => {
+  test('Добавление элемента', () => {
     expect(cartStore.items).toEqual([]);
     expect(cartStore.totalPrice).toEqual(0);
 
@@ -26,7 +26,7 @@ describe('Cartstore тест', () => {
     expect(cartStore.totalPrice).toEqual(calcTotalPrice([...cartStore.items]));
   });
 
-  test('Тест на плюс количества элемента', () => {
+  test('Плюс к количеству выбранного элемента', () => {
     cartStore.plusItem(itemToAdd);
     expect(cartStore.items).toContainEqual({
       ...itemToAdd,
@@ -36,7 +36,7 @@ describe('Cartstore тест', () => {
     expect(cartStore.totalPrice).toEqual(calcTotalPrice([...cartStore.items]));
   });
 
-  test('Тест на минус количества элемента', () => {
+  test('Минус к количеству выбранного элемента', () => {
     cartStore.minusItem(itemToAdd);
 
     expect(cartStore.items).toContainEqual({
@@ -47,7 +47,7 @@ describe('Cartstore тест', () => {
     expect(cartStore.totalPrice).toEqual(calcTotalPrice([...cartStore.items]));
   });
 
-  test('Тест на очистку всех элементов', () => {
+  test('Очистка всех элементов', () => {
     cartStore.clearItems();
     expect(cartStore.items).toEqual([]);
     expect(cartStore.totalPrice).toEqual(0);

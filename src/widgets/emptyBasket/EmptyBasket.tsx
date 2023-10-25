@@ -1,4 +1,4 @@
-import { BackToStartPageButton } from 'src/shared/back-to-start-page-button/BackToStartPageButton';
+import { BackToStartPageButton } from 'src/shared/backToStartPageButton/BackToStartPageButton';
 import styles from './styles.module.scss';
 
 export const EmptyBasket = () => {

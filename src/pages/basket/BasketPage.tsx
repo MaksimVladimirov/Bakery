@@ -1,17 +1,24 @@
-import { EmptyBasket } from 'src/widgets/empty-basket/EmptyBasket';
-import { BackToStartPageButton } from 'src/shared/back-to-start-page-button/BackToStartPageButton';
+import { EmptyBasket } from 'src/widgets/emptyBasket/EmptyBasket';
+import { BackToStartPageButton } from 'src/shared/backToStartPageButton/BackToStartPageButton';
 import Minus from '/public/images/basket/minus.svg';
 import Plus from '/public/images/basket/plus.svg';
 import Trash from '/public/images/basket/remove.svg';
 
 import styles from './styles.module.scss';
-import cartStore from 'src/app/store/store';
+import cartStore from 'src/features/cartStore/cartStore';
 import { observer } from 'mobx-react';
+import { BakeryInfo } from 'src/types/bakery-info/bakeryInfo';
 
 const BasketPage = observer(() => {
-  const onClickClear = () => {
+  const handleClearBasket = () => {
     if (window.confirm('Очистить корзину?')) {
       cartStore.clearItems();
+    }
+  };
+
+  const handleRemoveItem = (item: BakeryInfo) => {
+    if (window.confirm('Товар будет удален с корзины, вы уверены?')) {
+      cartStore.removeItem(item);
     }
   };
 
@@ -29,7 +36,7 @@ const BasketPage = observer(() => {
                 {item.count && item.count > 1 ? (
                   <img src={Minus} className={styles.minus_button} onClick={() => cartStore.minusItem(item)} />
                 ) : (
-                  <img src={Trash} className={styles.remove_button} onClick={() => cartStore.removeItem(item)} />
+                  <img src={Trash} className={styles.remove_button} onClick={() => handleRemoveItem(item)} />
                 )}
                 <div className={styles.count}> {item.count}</div>
 
@@ -39,7 +46,7 @@ const BasketPage = observer(() => {
           </div>
         ))}
         <p> Общая сумма составляет {cartStore.totalPrice}</p>
-        <button className={styles.remove_items__button} onClick={onClickClear}>
+        <button className={styles.remove_items__button} onClick={handleClearBasket}>
           Удалить все товары с корзины
         </button>
         <BackToStartPageButton />

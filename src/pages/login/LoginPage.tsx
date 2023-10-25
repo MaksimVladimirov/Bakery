@@ -1,4 +1,4 @@
-import { Form } from '../../features/auth-form/Form';
+import { Form } from '../../features/authForm/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from 'src/features/userSlice/userSlice';

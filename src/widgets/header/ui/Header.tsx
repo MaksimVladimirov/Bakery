@@ -1,8 +1,8 @@
 import { Logo } from '../../../shared/logo/Logo';
 import { NavMenu } from 'src/shared/nav/NavMenu';
-import { LogIn } from './log-in/LogIn';
+import { LogIn } from './logIn/LogIn';
 import { Basket } from './basket/Basket';
-import { LogOut } from './log-out/LogOut';
+import { LogOut } from './logOut/LogOut';
 import styles from './styles.module.scss';
 import { useAuth } from 'src/features/userSlice/hooks/useAuth';
 
